@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Performance - Portfolio Akira</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-result {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        .success { border-left-color: #28a745; }
+        .warning { border-left-color: #ffc107; }
+        .error { border-left-color: #dc3545; }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de Performance - Portfolio Akira Design</h1>
+
+    <div id="results">
+        <div class="test-result success">
+            <h3>✅ Optimisations implémentées</h3>
+            <ul>
+                <li>Lazy loading sur les images du portfolio</li>
+                <li>Préchargement des ressources critiques</li>
+                <li>Optimisation CSS pour les images</li>
+                <li>Tailles d'image fixes pour éviter le layout shift</li>
+            </ul>
+        </div>
+
+        <div class="test-result warning">
+            <h3>⚠️ Recommandations pour les images</h3>
+            <p>Les images sont encore volumineuses (1-3 MB). Pour des performances optimales :</p>
+            <ul>
+                <li>Compresser les images à 85% de qualité</li>
+                <li>Redimensionner à 800px maximum</li>
+                <li>Utiliser le format WebP si possible</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>🔍 Tests à effectuer</h2>
+
+    <button class="test-button" onclick="testImageLoading()">Tester le chargement des images</button>
+    <button class="test-button" onclick="testLazyLoading()">Tester le lazy loading</button>
+    <button class="test-button" onclick="testPerformance()">Test de performance global</button>
+
+    <div id="test-output"></div>
+
+    <script>
+        function addTestResult(message, type = 'info') {
+            const output = document.getElementById('test-output');
+            const div = document.createElement('div');
+            div.className = `test-result ${type}`;
+            div.innerHTML = `<p>${message}</p>`;
+            output.appendChild(div);
+        }
+
+        function testImageLoading() {
+            addTestResult('🔄 Test de chargement des images...', 'info');
+
+            const images = [
+                './images/Becky-brithday.png',
+                './images/Lylie-cuistot.jpg',
+                './images/IMG-20250523-WA0098.jpg',
+                './images/whatsapp-image-2025-09-19-at-04-39-46.jpeg',
+                './images/Aki2.jpg',
+                './images/zikzone.jpeg'
+            ];
+
+            let loaded = 0;
+            const startTime = Date.now();
+
+            images.forEach((src, index) => {
+                const img = new Image();
+                img.onload = () => {
+                    loaded++;
+                    if (loaded === images.length) {
+                        const endTime = Date.now();
+                        const duration = endTime - startTime;
+                        addTestResult(`✅ Toutes les images chargées en ${duration}ms`, 'success');
+                    }
+                };
+                img.onerror = () => {
+                    addTestResult(`❌ Erreur de chargement: ${src}`, 'error');
+                };
+                img.src = src;
+            });
+        }
+
+        function testLazyLoading() {
+            addTestResult('🔄 Test du lazy loading...', 'info');
+
+            // Vérifier que les attributs loading sont présents
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            const eagerImages = document.querySelectorAll('img[loading="eager"]');
+
+            addTestResult(`📊 Images avec lazy loading: ${lazyImages.length}`, 'info');
+            addTestResult(`📊 Images avec eager loading: ${eagerImages.length}`, 'info');
+
+            if (lazyImages.length > 0) {
+                addTestResult('✅ Lazy loading correctement implémenté', 'success');
+            } else {
+                addTestResult('❌ Lazy loading manquant', 'error');
+            }
+        }
+
+        function testPerformance() {
+            addTestResult('🔄 Test de performance global...', 'info');
+
+            if ('performance' in window) {
+                const navigation = performance.getEntriesByType('navigation')[0];
+                if (navigation) {
+                    const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
+                    addTestResult(`⏱️ Temps de chargement: ${loadTime}ms`, 'info');
+
+                    if (loadTime < 3000) {
+                        addTestResult('✅ Performance excellente', 'success');
+                    } else if (loadTime < 5000) {
+                        addTestResult('⚠️ Performance acceptable', 'warning');
+                    } else {
+                        addTestResult('❌ Performance à améliorer', 'error');
+                    }
+                }
+            } else {
+                addTestResult('⚠️ API Performance non supportée', 'warning');
+            }
+        }
+
+        // Test automatique au chargement
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testLazyLoading();
+                testPerformance();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

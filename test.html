@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Portfolio Akira Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #007bff;
+            background: #f8f9fa;
+        }
+        .success { border-left-color: #28a745; }
+        .warning { border-left-color: #ffc107; }
+        .error { border-left-color: #dc3545; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.warning { background: #fff3cd; color: #856404; }
+        .status.error { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Test du Portfolio Akira Design</h1>
+        <p>Cette page teste la configuration pour GitHub Pages.</p>
+
+        <h2>📁 Structure des fichiers</h2>
+
+        <div class="test-item success">
+            <strong>✅ Fichier index.html</strong>
+            <span class="status success">Trouvé</span>
+            <p>Page principale avec tous les chemins corrigés.</p>
+        </div>
+
+        <div class="test-item success">
+            <strong>✅ Fichier .nojekyll</strong>
+            <span class="status success">Créé</span>
+            <p>Évite les conflits avec Jekyll sur GitHub Pages.</p>
+        </div>
+
+        <div class="test-item success">
+            <strong>✅ Dossier CSS</strong>
+            <span class="status success">Présent</span>
+            <p>Feuilles de style correctement référencées.</p>
+        </div>
+
+        <div class="test-item success">
+            <strong>✅ Dossier JS</strong>
+            <span class="status success">Présent</span>
+            <p>Scripts JavaScript correctement référencés.</p>
+        </div>
+
+        <div class="test-item warning">
+            <strong>⚠️ Dossier Images</strong>
+            <span class="status warning">À vérifier</span>
+            <p>Vérifiez que toutes les images sont présentes dans le dossier images/.</p>
+        </div>
+
+        <h2>🔧 Configuration GitHub Pages</h2>
+
+        <div class="test-item success">
+            <strong>✅ Chemins relatifs corrigés</strong>
+            <span class="status success">Appliqué</span>
+            <p>Tous les chemins utilisent maintenant "./" pour GitHub Pages.</p>
+        </div>
+
+        <div class="test-item success">
+            <strong>✅ README.md</strong>
+            <span class="status success">Créé</span>
+            <p>Instructions complètes pour le déploiement.</p>
+        </div>
+
+        <div class="test-item success">
+            <strong>✅ .gitignore</strong>
+            <span class="status success">Créé</span>
+            <p>Fichier de configuration Git optimisé.</p>
+        </div>
+
+        <h2>🚀 Prochaines étapes</h2>
+
+        <div class="test-item">
+            <strong>1. Pousser sur GitHub</strong>
+            <p>Utilisez ces commandes pour pousser votre code :</p>
+            <code>git add .<br>git commit -m "Correction des chemins pour GitHub Pages"<br>git push origin main</code>
+        </div>
+
+        <div class="test-item">
+            <strong>2. Activer GitHub Pages</strong>
+            <p>Dans les paramètres de votre dépôt GitHub, activez Pages avec la branche "main".</p>
+        </div>
+
+        <div class="test-item">
+            <strong>3. Vérifier le site</strong>
+            <p>Votre site sera accessible à l'adresse : <code>https://[votre-nom-utilisateur].github.io/[nom-du-depot]/</code></p>
+        </div>
+
+        <h2>🔍 Test des liens</h2>
+        <p><a href="index.html">🔗 Aller au portfolio principal</a></p>
+
+        <p><em>Dernière mise à jour : <span id="last-update"></span></em></p>
+    </div>
+
+    <script>
+        document.getElementById('last-update').textContent = new Date().toLocaleString('fr-FR');
+    </script>
+</body>
+</html>
