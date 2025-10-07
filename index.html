@@ -3,26 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio d'Akira Design - Infographiste et designer visuel. Création de logos, affiches, designs web et réseaux sociaux.">
     <title>Portfolio Akira design</title>
 
     <!-- Logo métadonnée -->
-    <link rel="icon" href="images/Akira logo méta.png" type="image/png">
+    <link rel="icon" href="images/Akiraméta.png" type="image/png">
     
     <!-- Polices -->
-    <!-- Préconnexion optimisée -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@300;400;500&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <!-- Chargement optimisé avec display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Fallback CSS -->
-    <style>
-        body {
-            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-    </style>
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -36,7 +26,7 @@
     <header class="navbar" data-aos="fade-down">
         <div class="nav-container">
                 <a href="#" class="nav-logo">
-                    <img src="images/Akilogo.png" alt="Logo Infographie" loading="eager" decoding="sync" fetchpriority="high">
+                    <img src="images/Akilogo.png" alt="Logo Infographie" width="87" height="87" loading="eager" decoding="sync" fetchpriority="high">
                 </a>
             
             <nav class="nav-menu" id="nav-menu">
@@ -57,8 +47,21 @@
         </div>
     </header>
 
+    <!-- Bouton Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Section Accueil -->
     <section id="accueil" class="hero">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
         <div class="hero-content">
             <h1 class="hero-title">Transformez vos idées en <span>designs percutants</span></h1>
             <p class="hero-subtitle">Création d'infographies et designs visuels qui captivent et communiquent efficacement</p>
@@ -72,7 +75,7 @@
             
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right">
-                    <img src="images/Akilogo.png" alt="Mon portrait" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="images/Akilogo.png" alt="Mon portrait" width="400" height="400" loading="lazy" decoding="async" fetchpriority="low">
                 </div>
                 
                 <div class="about-text" data-aos="fade-left">
@@ -196,47 +199,17 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section id="contact" class="contact">
+    <!-- Section Liens sociaux -->
+    <section id="contact" class="social-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Contactez-moi</h2>
-            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Discutons de votre projet</p>
-            
-            <div class="contact-content">
-                <form class="contact-form" id="contact-form" data-aos="fade-right">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" required>
-                        <label for="name">Nom complet</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" required>
-                        <label for="email">Adresse email</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Votre message</label>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Envoyer le message</button>
-                <form id="contact-form" class="contact-form" novalidate>
-                  <input type="hidden" name="_token" id="csrf-token">
-                  
-                  <div class="form-group">
-                    <input type="text" 
-                           name="name" 
-                           id="name" 
-                           placeholder="Votre nom" 
-                           required 
-                           minlength="2"
-                           maxlength="50"
-                           pattern="[A-Za-zÀ-ÿ\s]{2,50}">
-                    <span class="error-message" id="name-error"></span>
-                  </div>
-                  
-                  <div class="form-group">
-                    <input type="email" 
+            <h2 class="section-title" data-aos="fade-up">Suivez-moi</h2>
+            <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:gdevfullstck@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61565792021505" class="social-icon" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/069666582" class="social-icon" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/akiradesign242/" class="social-icon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://vm.tiktok.com/ZMSGePh5q/" class="social-icon" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            </div>
         </div>
     </section>
 
