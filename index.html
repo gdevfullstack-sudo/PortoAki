@@ -8,6 +8,11 @@
 
     <!-- Logo métadonnée -->
     <link rel="icon" href="images/Akiraméta.png" type="image/png">
+
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="images/Akilogo.png" as="image">
+    <link rel="preload" href="images/Aki2.jpg" as="image">
+    <link rel="preload" href="images/whatsapp-image-2025-09-19-at-04-39-46.jpeg" as="image">
     
     <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -95,7 +100,7 @@
             
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="images/whatsapp-image-2025-09-19-at-04-39-46.jpeg" alt="Projet 1" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="images/whatsapp-image-2025-09-19-at-04-39-46.jpeg" alt="Projet 1" loading="eager" decoding="async" fetchpriority="high">
                     <div class="portfolio-overlay">
                         <h3>Identité visuelle</h3>
                         <p>Logo et charte graphique</p>
